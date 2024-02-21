@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Recipe Keeper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #541414;
+            color: #f5f2f2;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer {
+            background-color: #541414;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            font-size: 24px;
+        }
+        .recipe {
+            display: grid;
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+        .recipe img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
+        .recipe p {
+            text-align: center;
+        }
+        @media (min-width: 601px) {
+            .recipe {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1, h2 {
+                font-size: 20px;
+            }
+        }
+        @media (min-width: 1025px) {
+            .recipe {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            h1, h2 {
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 600px) {
+            .recipe {
+                grid-template-columns: 1fr;
+            }
+            .recipe img {
+                width: 100%;
+                height: auto;
+                display: block;
+                cursor: pointer;
+            }
+            body {
+                background-color: #ffcc00; /* yellow for mobile devices */
+            }
+            h1, h2 {
+                font-size: 18px; /* Reduce font size for mobile view */
+            }
+        }
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            display: none;
+        }
+        .lightbox-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ronit Dhillon</h1>
+    </header>
+    <div class="container">
+        <h2>Responsive Recipe Keeper</h2>
+        <div class="recipe">
+            <div>
+                <img src="Oreo Cookie Dessert.jpg" alt="Oreo Cookie Dessert">
+                <p>A decadent no-bake dessert featuring a crushed Oreo cookie crust topped with a creamy layer of sweetened cream cheese and whipped topping, garnished with crushed Oreos and drizzled with chocolate syrup for a deliciously indulgent treat.</p>
+            </div>
+            <div>
+                <img src="Creamy Pizza.jpg" alt="Creamy Pizza">
+                <p>A classic creamy pizza made with a pre-made dough, topped with pizza sauce, shredded mozzarella cheese, and your favorite toppings like pepperoni, olives, mushrooms, bell peppers, and onions, baked to perfection.</p>
+            </div>
+            <div>
+                <img src="Grilled Pasta.jpg" alt="Grilled Pasta">
+                <p>A simple and flavorful grilled pasta dish featuring your choice of spaghetti or penne tossed in a garlic-infused olive oil and tomato sauce, seasoned with basil and oregano, and topped with grated Parmesan cheese.</p>
+            </div>
+            <div>
+                <img src="Butterball burger.jpg" alt="Butterball Burger">
+                <p>A juicy butterball burger made with Butterball ground turkey, mixed with breadcrumbs, Parmesan cheese, parsley, onions, and garlic, grilled to perfection and served on a bun with your favorite toppings.</p>
+            </div>
+            <div>
+                <img src="Raspberry Cake.jpg" alt="Raspberry Cake">
+                <p>A delightful dessert featuring a moist and fluffy cake infused with fresh raspberries, topped with a sweet glaze made from powdered sugar, milk, and vanilla extract.</p>
+            </div>
+            <div>
+                <img src="Salad Bowl.jpg" alt="Salad Bowl">
+                <p>A refreshing salad bowl filled with a mix of vibrant salad greens, cherry tomatoes, cucumbers, red onions, bell peppers, olives, and crumbled feta cheese.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Contact: Ronitdhillon@gmail.com
+    </footer>
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <h3 id="ingredients-heading"></h3>
+            <ul id="ingredients-list"></ul>
+            <button class="lightbox-close">Close</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
